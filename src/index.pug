@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Atrox's Online-Poker
+
+    body
+        div(route="/").route.active
+            h1 WELCOME TO ATROX'S ONLINE-POKER-SITE
+            label(for="name-input") Your nickname:
+            input#name-input(type="text", name="name", placeholder="enter your nickname, please")
+            
+            button#join-room-btn Join Room
+            button#create-room-btn Create Room
+
+            #cn-get-roomid
+                label(for="id-input") Room-ID:
+                input#id-input(type="text", name="id", placeholder="please enter the room id")
+                input(type="submit", value="go to room").submit-id-btn
+        
+
+        div(route="/lobby").route
+            form#settings
+                label(for="i-money") So viel Chips erhält jeder Spieler zu Anfang:
+                input(type="number", name="initMoney", id="i-money", value="100" required)
+                label(for="i-min-bet") Um so viel muss man mindestens erhöhen + Blind setzen:
+                input(type="number", name="minBet", id="i-min-bet", value="5" required)
+                label(for="i-min-delay") Nach so vielen verstrichenen Sekunden ohne Aktion, wird ein Spieler als inaktiv gesetzt:
+                input(type="number", name="minDelay", id="i-min-delay", value="60" required) 
+                input(type="submit", value="Start")
+            
+            ul#lobby
+
+
+        div(route="/game").route
+            
+
+
+        

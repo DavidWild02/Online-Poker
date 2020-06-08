@@ -1,0 +1,17 @@
+#cn-get-roomid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: transform(-50%, -50%);
+    width: 50%;
+    height: 25%;
+    display: none;
+}
+
+.route {
+    display: none;
+}
+
+.route.active {
+    display: block;
+}
