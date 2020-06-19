@@ -25,15 +25,35 @@ html(lang='en')
                 label(for="i-money") So viel Chips erhält jeder Spieler zu Anfang:
                 input(type="number", name="initMoney", id="i-money", value="100" required)
                 label(for="i-min-bet") Um so viel muss man mindestens erhöhen + Blind setzen:
-                input(type="number", name="minBet", id="i-min-bet", value="5" required)
+                input(type="number", name="blind", id="i-min-bet", value="5" required)
                 label(for="i-min-delay") Nach so vielen verstrichenen Sekunden ohne Aktion, wird ein Spieler als inaktiv gesetzt:
-                input(type="number", name="minDelay", id="i-min-delay", value="60" required) 
+                input(type="number", name="timedOutLimit", id="i-min-delay", value="60" required)  
                 input(type="submit", value="Start")
+
+            p#p-room-id
             
             ul#lobby
 
 
         div(route="/game").route
+            ul#players
+            
+            //ul#cards-table
+            //p#pot
+            //
+            //p#cards-hand
+            //p#money
+
+            fieldset#fsd-game(disabled)
+                input#b-check(type="button", value="check") 
+                br
+                input#b-bet(type="button", value="bet")
+                input#i-bet(type="number", name="", value="0")
+                br
+                input#b-lay-down(type="button", value="lay down")
+
+
+
             
 
 

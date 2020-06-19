@@ -2,6 +2,7 @@ import io from 'socket.io-client'
 import $ from 'jquery'
 import route from './route'
 import lobby from './lobby'
+import game from './game'
 
 import './index.css'
 
@@ -14,6 +15,7 @@ $(function(){
     socket.on('systemmsg', console.log)
 
     lobby(socket)
+    game(socket)
 
     $('#create-room-btn').click(() => {
         const name = $('#name-input').val()
@@ -28,7 +30,7 @@ $(function(){
         }
     })
     
-    $('.submit-id-btn').click((e) => {
+    $('.submit-id-btn').click(e => {
         e.preventDefault()
         const name = $('#name-input').val() 
         const roomId = $('#id-input').val()
@@ -41,8 +43,8 @@ $(function(){
         }
     })
     
-    socket.on('joinedRoom', (data) => {
-        console.log(data)
+    socket.on('joinedRoom', roomId => {
+        $('#p-room-id').text(`localhost:5000/?room=${roomId}`)
         route('/lobby')
     })
     

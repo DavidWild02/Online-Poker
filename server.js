@@ -4,7 +4,6 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 
 const http = require('http')
 const path = require('path')
-const socketIO = require('socket.io')
 
 const api = require('./api.js')
 
@@ -25,11 +24,9 @@ app.set('views', path.join(__dirname, '/dist'))
 
 // Sets up an Server that uses the http-protocol
 const server = http.Server(app)
-// creates a socket 
-const io = socketIO(server)
 
-//api.setup(app)
-api(io)
+// creates a socket 
+const io = api(server)
 
 server.listen(5000, function() {
     console.log('Starting server on port 5000');
