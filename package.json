@@ -13,7 +13,7 @@
   "author": "David Wild",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "deparam.js": "^2.1.1",
     "jquery": "^3.5.1",
     "jqueryrouter": "^2.2.8"
